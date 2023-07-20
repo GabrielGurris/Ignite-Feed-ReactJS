@@ -1,3 +1,5 @@
+import { Avatar } from './Avatar';
+import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
@@ -6,7 +8,7 @@ export function Post() {
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://media.licdn.com/dms/image/C4D03AQEIRTfw42AJgg/profile-displayphoto-shrink_800_800/0/1618577285346?e=1695254400&v=beta&t=-siKU-4rEGeRffW_GpT6Y0iyJQNf63nVX5o50lH68zU" />
+                    <Avatar src="https://media.licdn.com/dms/image/C4D03AQEIRTfw42AJgg/profile-displayphoto-shrink_800_800/0/1618577285346?e=1695254400&v=beta&t=-siKU-4rEGeRffW_GpT6Y0iyJQNf63nVX5o50lH68zU" />
                     <div className={styles.authorInfo}>
                         <strong>Gabriel Gurris</strong>
                         <span>Web Developer</span>
@@ -23,8 +25,30 @@ export function Post() {
 
                 <p>👉 <a href="">jane.design/doctorcare</a></p>
 
-                <p><a href="">#novoprojeto #nlw #rocketseat</a></p>
+                <p>
+                    <a href="">#novoprojeto</a> 
+                    <a href=""> #nlw</a>
+                    <a href=""> #rocketseat</a></p>
             </div>
+
+            <form className={styles.commentForm}>
+                <strong>Deixe seu feedback</strong>
+
+                <textarea
+                    placeholder="Deixe um comentário"
+                />
+
+                <footer>
+                    <button type="submit">Publicar</button>
+                </footer>
+            </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
+
         </article>
     )
 }
